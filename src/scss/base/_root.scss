@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+:root {
+	@each $color, $listOfShades in $colors {
+		@each $label, $shade in $listOfShades {
+			--clr-#{$color}-#{''+$label}: #{$shade};
+		}
+	}
+	--check-gradient: linear-gradient(
+		to bottom right,
+		var(--clr-primary-cyan),
+		var(--clr-primary-pink)
+	);
+	&[data-theme='light'] {
+		--body-bg: var(--clr-neutral-200);
+		--body-text: var(--clr-neutral-900);
+		--element-bg: var(--clr-neutral-100);
+		--element-bg-active: var(--clr-neutral-200);
+	}
+	&[data-theme='dark'] {
+		--body-bg: var(--clr-neutral-900);
+		--body-text: var(--clr-neutral-200);
+		--element-bg: var(--clr-neutral-800);
+		--element-bg-active: var(--clr-neutral-900);
+	}
+	@each $label, $family in $fontFamilies {
+		--ff-#{$label}: #{$family};
+	}
+	@each $label, $weight in $fontWeights {
+		--fw-#{$label}: #{$weight};
+	}
+}
