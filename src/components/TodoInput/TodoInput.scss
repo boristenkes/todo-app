@@ -13,15 +13,13 @@
 	caret-color: var(--clr-primary-blue);
 	width: 100%;
 
-	&--form {
-		--padding: 3rem;
-	}
 	&--label {
 		background: var(--element-bg);
 		padding: 1.5rem;
-		border-radius: 0.25rem;
+		border-radius: 0.35rem;
 		display: block;
 		@include flex($align: center);
+		@include shadow();
 
 		&::before {
 			content: '';

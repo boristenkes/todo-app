@@ -4,7 +4,7 @@ function App() {
 	return (
 		<>
 			<Banner />
-			<main className='container section-padding'>
+			<main className='container'>
 				<Header />
 				<TodoInput />
 				<TodoList />

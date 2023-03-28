@@ -1,6 +1,7 @@
 @use '../../scss/abstracts/' as *;
 
 .header {
+	--padding: 6rem 2.5rem;
 	@include flex(space-between, center);
 
 	&__logo {

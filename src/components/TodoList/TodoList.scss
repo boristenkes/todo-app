@@ -1,0 +1,98 @@
+@use '../../scss/abstracts/' as *;
+
+.todo-list {
+	& > * + * {
+		position: relative;
+
+		@include pseudo() {
+			top: 0;
+			inset-inline: 0;
+			height: 1px;
+			background: var(--clr-neutral-500);
+			opacity: 0.25;
+		}
+	}
+
+	&--wrapper {
+		@include shadow();
+		margin-top: 2rem;
+		border-radius: 0.5rem;
+		overflow: hidden;
+	}
+	&__item {
+		background: var(--element-bg);
+		color: var(--body-text);
+		font-family: var(--ff-primary);
+		font-size: 1.25rem;
+		padding: 1.5rem;
+		@include flex($align: center);
+		gap: 1.5rem;
+
+		label {
+			min-width: 25px;
+			aspect-ratio: 1;
+			position: relative;
+			opacity: 0.25;
+			border-radius: 50%;
+			overflow: hidden;
+			cursor: pointer;
+			background-color: var(--clr-neutral-500);
+
+			@include pseudo() {
+				inset: 2px;
+				background-color: var(--element-bg);
+				border-radius: 50%;
+				z-index: 1;
+				transition: transform 200ms ease;
+			}
+
+			&:has(input[type='checkbox']:checked),
+			&:hover {
+				opacity: 1;
+				background-image: var(--check-gradient);
+
+				&::before {
+					inset: 2px;
+				}
+			}
+			&:has(input[type='checkbox']:checked) {
+				&::before {
+					transform: scale(0);
+				}
+			}
+		}
+		input[type='checkbox'] {
+			visibility: hidden;
+		}
+		.check-icon {
+			@include absolute-center;
+			width: 50%;
+			fill: var(--clr-neutral-100);
+		}
+		p {
+			white-space: nowrap;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		label:has(input[type='checkbox']:checked) + p {
+			opacity: 0.4;
+			text-decoration: line-through 1px;
+		}
+		button {
+			margin-left: auto;
+			padding: 0.35rem;
+			background: transparent;
+			border: none;
+
+			&:hover {
+				background: var(--clr-neutral-700-transparent);
+				border-radius: 0.25rem;
+			}
+
+			> svg path {
+				fill: var(--body-text);
+			}
+		}
+	}
+}

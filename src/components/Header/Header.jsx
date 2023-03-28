@@ -7,7 +7,7 @@ export default function Header() {
 	const { theme, setTheme } = useContext(ThemeContext);
 
 	return (
-		<header className='header'>
+		<header className='header | section-padding'>
 			<h1 className='header__logo'>TODO</h1>
 			<button
 				onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
