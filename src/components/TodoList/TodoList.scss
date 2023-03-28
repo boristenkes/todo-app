@@ -1,18 +1,6 @@
 @use '../../scss/abstracts/' as *;
 
 .todo-list {
-	& > * + * {
-		position: relative;
-
-		@include pseudo() {
-			top: 0;
-			inset-inline: 0;
-			height: 1px;
-			background: var(--clr-neutral-500);
-			opacity: 0.25;
-		}
-	}
-
 	&--wrapper {
 		@include shadow();
 		margin-top: 2rem;
@@ -27,6 +15,15 @@
 		padding: 1.5rem;
 		@include flex($align: center);
 		gap: 1.5rem;
+		position: relative;
+
+		@include pseudo() {
+			bottom: 0;
+			inset-inline: 0;
+			height: 1px;
+			background: var(--clr-neutral-500);
+			opacity: 0.25;
+		}
 
 		label {
 			min-width: 25px;

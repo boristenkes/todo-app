@@ -1,0 +1,48 @@
+@use '../../scss/abstracts/' as *;
+
+.todo-options {
+	--opacity: 0.4;
+	background-color: var(--element-bg);
+	padding: 1rem 1.5rem;
+	@include flex(space-between, center);
+
+	&__counter {
+		font-family: var(--ff-primary);
+		color: var(--body-text);
+		opacity: var(--opacity);
+	}
+
+	&__filter {
+		@include flex($align: center);
+		gap: 1rem;
+		&--label {
+			font-family: var(--ff-primary);
+			color: var(--body-text);
+			cursor: pointer;
+
+			&:has(input[type='radio']:checked) {
+				color: var(--clr-primary-blue);
+				opacity: 1;
+			}
+			&:not(:hover) {
+				opacity: var(--opacity);
+			}
+		}
+
+		&--input {
+			visibility: hidden;
+			position: absolute;
+		}
+	}
+
+	&__clear {
+		background: transparent;
+		border: none;
+		color: var(--body-text);
+		font-family: var(--ff-primary);
+
+		&:not(:hover) {
+			opacity: var(--opacity);
+		}
+	}
+}
