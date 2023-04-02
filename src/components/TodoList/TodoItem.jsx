@@ -4,7 +4,7 @@ import { icons } from '../../assets/icons';
 import { useMediaQuery } from 'react-responsive';
 import { ImCheckmark as Check } from 'react-icons/im';
 
-export default function TodoItem({ todo }) {
+export default function TodoItem({ todo, ...props }) {
 	const { todos, setTodos } = useContext(DataContext);
 	const [isChecked, setIsChecked] = useState(todo.complete);
 	const isMobile = useMediaQuery({ query: '(max-width: 40em)' });
@@ -23,10 +23,11 @@ export default function TodoItem({ todo }) {
 	}, [isChecked]);
 
 	return (
-		<li
+		<div
 			className='todo-list__item'
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
+			{...props}
 		>
 			<label htmlFor={todo.id}>
 				<input
@@ -41,6 +42,6 @@ export default function TodoItem({ todo }) {
 			{(isMobile || isHovered) && (
 				<button onClick={deleteTodo}>{icons.cross}</button>
 			)}
-		</li>
+		</div>
 	);
 }

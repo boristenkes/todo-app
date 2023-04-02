@@ -17,5 +17,18 @@
 	&__theme-switcher {
 		background: transparent;
 		border: none;
+
+		@include pseudo() {
+			aspect-ratio: 1;
+			inset: -0.5rem;
+			z-index: -1;
+			background: var(--clr-neutral-600);
+			opacity: 0.5;
+			border-radius: 50%;
+			transition: transform 200ms ease;
+		}
+		&:not(:hover, :focus-visible)::before {
+			transform: scale(0);
+		}
 	}
 }
