@@ -24,7 +24,7 @@ export default function TodoItem({ todo, ...props }) {
 
 	return (
 		<div
-			className='todo-list__item'
+			className='todo-list__item | theme-transition'
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 			{...props}

@@ -28,7 +28,7 @@ export default function TodoInput() {
 			className='todo-input--form'
 		>
 			<label
-				className='todo-input--label'
+				className='todo-input--label | theme-transition'
 				htmlFor='todoInput'
 			>
 				<input

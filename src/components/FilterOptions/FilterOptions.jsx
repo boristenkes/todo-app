@@ -24,7 +24,7 @@ export default function FilterOptions({ separated = false }) {
 		<div className={`todo-options__filter ${separated ? 'separated' : ''}`}>
 			{filterOptions.map(opt => (
 				<label
-					className='todo-options__filter--label'
+					className='todo-options__filter--label | theme-transition'
 					key={opt.option}
 					htmlFor={`filter-${opt.option}`}
 				>

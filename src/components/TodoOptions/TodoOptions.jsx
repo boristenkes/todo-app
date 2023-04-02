@@ -18,13 +18,13 @@ export default function TodoOptions() {
 	};
 
 	return (
-		<div className='todo-options'>
-			<p className='todo-options__counter'>
+		<div className='todo-options | theme-transition'>
+			<p className='todo-options__counter | theme-transition'>
 				{todosLeft} todo{todosLeft !== 1 && 's'} left
 			</p>
 			{isDesktop && <FilterOptions />}
 			<button
-				className='todo-options__clear'
+				className='todo-options__clear | theme-transition'
 				onClick={clearCompleted}
 			>
 				Clear Completed

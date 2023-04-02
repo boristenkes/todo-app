@@ -11,6 +11,7 @@
 		var(--clr-primary-cyan),
 		var(--clr-primary-pink)
 	);
+	--theme-transition-duration: 500ms;
 	&[data-theme='light'] {
 		--body-bg: var(--clr-neutral-200);
 		--body-text: var(--clr-neutral-900);
