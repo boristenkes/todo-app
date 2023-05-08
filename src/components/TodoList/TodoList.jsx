@@ -61,7 +61,7 @@ export default function TodoList() {
 					fontFamily: 'var(--ff-primary)',
 					color: 'var(--clr-neutral-500)',
 					textAlign: 'center',
-					marginTop: '3rem',
+					paddingBlock: '3rem'
 				}}
 			>
 				Drag and drop to reorder the list

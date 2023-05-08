@@ -5,16 +5,16 @@ import DataContext from '../../context/DataContext';
 const filterOptions = [
 	{
 		option: 'all',
-		label: 'All',
+		label: 'All'
 	},
 	{
 		option: 'active',
-		label: 'Active',
+		label: 'Active'
 	},
 	{
 		option: 'completed',
-		label: 'Completed',
-	},
+		label: 'Completed'
+	}
 ];
 
 export default function FilterOptions({ separated = false }) {
@@ -24,7 +24,7 @@ export default function FilterOptions({ separated = false }) {
 		<div className={`todo-options__filter ${separated ? 'separated' : ''}`}>
 			{filterOptions.map(opt => (
 				<label
-					className='todo-options__filter--label | theme-transition'
+					className='todo-options__filter--label'
 					key={opt.option}
 					htmlFor={`filter-${opt.option}`}
 				>

@@ -40,8 +40,7 @@
 				background-color: var(--element-bg);
 				border-radius: 50%;
 				z-index: 1;
-				transition: transform 200ms ease,
-					background-color var(--theme-transition-duration) ease;
+				transition: transform 200ms ease;
 			}
 
 			&:has(input[type='checkbox']:checked),

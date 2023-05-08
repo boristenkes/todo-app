@@ -15,7 +15,7 @@ export default function TodoInput() {
 		const newTodo = {
 			id: uuid(),
 			complete: false,
-			todo: todo,
+			todo: todo
 		};
 
 		setTodos([...todos, newTodo]);
@@ -28,7 +28,7 @@ export default function TodoInput() {
 			className='todo-input--form'
 		>
 			<label
-				className='todo-input--label | theme-transition'
+				className='todo-input--label'
 				htmlFor='todoInput'
 			>
 				<input

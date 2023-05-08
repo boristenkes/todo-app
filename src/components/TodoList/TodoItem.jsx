@@ -17,14 +17,14 @@ export default function TodoItem({ todo, ...props }) {
 
 	useEffect(() => {
 		const changedTodos = todos.map(item =>
-			item.id === todo.id ? { ...item, complete: isChecked } : item,
+			item.id === todo.id ? { ...item, complete: isChecked } : item
 		);
 		setTodos(changedTodos);
 	}, [isChecked]);
 
 	return (
 		<div
-			className='todo-list__item | theme-transition'
+			className='todo-list__item'
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 			{...props}
